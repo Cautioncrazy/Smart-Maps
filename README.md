@@ -1,35 +1,24 @@
 # SmartRoute AI 🗺️ 🧠
 
-**SmartRoute AI** is a web application that revolutionizes navigation by combining real-time Google Maps data with the reasoning capabilities of Google's Gemini AI. Instead of simply finding the *fastest* route, this app analyzes route characteristics to recommend the *smartest* option based on safety, scenery, and driving complexity.
+**SmartRoute AI** is an intelligent navigation assistant that finds the best route based on your driving persona (e.g., "Relaxed Driver", "Speed Demon") using OpenRouteService and Google Gemini AI.
 
 ## 🚀 Features
 
-* **Interactive Map:** Fully integrated Google Maps interface using the Maps JavaScript API.
-* **Intelligent Routing:** Fetches standard driving directions (fastest, shortest, eco-friendly) via the Directions API.
-* **AI Analysis:** Uses Gemini (via Google Generative AI SDK) to "read" the route data—analyzing turn complexity, highway usage, and distance.
-* **Smart Recommendations:** Highlights the route that best fits a specific persona (e.g., "The Relaxed Driver" or "The Sightseer") and explains *why* in natural language.
-* **Modern UI:** Built with Next.js 14 (App Router) and styled with Tailwind CSS for a responsive experience.
+* **Interactive Map:** Built with `react-leaflet` and OpenStreetMap.
+* **Smart Routing:** Fetches routes via **OpenRouteService (ORS)**.
+* **AI Analysis:** Uses **Google Gemini** to analyze routes and recommend the best one.
+* **Modern UI:** Tailwind CSS with Light, Dark, and OLED Dark modes.
 
 ## 🛠️ Tech Stack
 
-* **Framework:** [Next.js](https://nextjs.org/) (React)
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Maps:** [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript) & `react-google-maps` (or `@googlemaps/js-api-loader`)
-* **AI:** [Google Gemini API](https://ai.google.dev/) (Generative AI SDK)
+* **Framework:** Next.js 14+ (App Router)
+* **Styling:** Tailwind CSS + `next-themes`
+* **Maps:** `react-leaflet`, `leaflet`
+* **Routing API:** OpenRouteService
+* **AI:** Google Gemini (Generative AI SDK)
+* **Geocoding:** Nominatim (OSM)
 
-## 📦 Prerequisites
-
-Before running this project, you need API keys from Google:
-
-1.  **Google Maps API Key:**
-    * Go to the [Google Cloud Console](https://console.cloud.google.com/).
-    * Enable the **Maps JavaScript API** and **Directions API**.
-    * Create an API key.
-2.  **Gemini API Key:**
-    * Go to [Google AI Studio](https://aistudio.google.com/).
-    * Create an API key for the Gemini Flash or Pro model.
-
-## ⚡ Getting Started
+## 📦 Setup & Installation
 
 1.  **Clone the repository:**
     ```bash
@@ -40,19 +29,17 @@ Before running this project, you need API keys from Google:
 2.  **Install dependencies:**
     ```bash
     npm install
-    # or
-    yarn install
-    # or
-    pnpm install
     ```
 
 3.  **Set up Environment Variables:**
-    Create a `.env.local` file in the root directory and add your keys:
+    Create a `.env.local` file in the root directory:
 
     ```bash
-    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_maps_api_key_here
+    NEXT_PUBLIC_ORS_API_KEY=your_ors_api_key_here
     GEMINI_API_KEY=your_gemini_api_key_here
     ```
+
+    > **Note:** The project is configured to use the keys provided during setup.
 
 4.  **Run the development server:**
     ```bash
@@ -60,20 +47,15 @@ Before running this project, you need API keys from Google:
     ```
 
 5.  **Open the app:**
-    Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+    Navigate to [http://localhost:3000](http://localhost:3000).
 
-## 📂 Project Structure
+## 📝 Usage
 
-```text
-Smart-Maps/
-├── app/
-│   ├── api/
-│   │   └── analyze-route/  # Server endpoint calling Gemini
-│   ├── components/
-│   │   ├── Map.tsx         # Google Maps rendering logic
-│   │   └── RouteForm.tsx   # Input for Origin/Destination
-│   ├── page.tsx            # Main layout
-│   └── layout.tsx
-├── public/
-├── .env.local              # API Keys (Do not commit this!)
-└── README.md
+1.  Enter Origin and Destination (or click on the map).
+2.  Select your Driving Persona.
+3.  Click "Find Smart Route".
+4.  View the recommended route highlighted in green with AI reasoning.
+
+## 📄 License
+
+Open Source.
