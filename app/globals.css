@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .oled, .dark *, .oled *));
+
+:root {
+  --background: #f9fafb; /* gray-50 */
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-border: #e5e7eb; /* gray-200 */
+  --input-bg: #ffffff;
+}
+
+.dark {
+  --background: #111827; /* gray-900 */
+  --foreground: #f9fafb;
+  --card: #1f2937; /* gray-800 */
+  --card-border: #374151; /* gray-700 */
+  --input-bg: #374151;
+}
+
+.oled {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #000000;
+  --card-border: #333333;
+  --input-bg: #000000;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-input: var(--input-bg);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
