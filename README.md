@@ -33,8 +33,8 @@ Before running this project, you need API keys from Google:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/smartroute-ai.git](https://github.com/your-username/smartroute-ai.git)
-    cd smartroute-ai
+    git clone https://github.com/Cautioncrazy/Smart-Maps.git
+    cd Smart-Maps
     ```
 
 2.  **Install dependencies:**
@@ -65,7 +65,7 @@ Before running this project, you need API keys from Google:
 ## 📂 Project Structure
 
 ```text
-smartroute-ai/
+Smart-Maps/
 ├── app/
 │   ├── api/
 │   │   └── analyze-route/  # Server endpoint calling Gemini
