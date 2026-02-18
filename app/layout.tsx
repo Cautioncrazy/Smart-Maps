@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'SmartRoute AI',
   description: 'Intelligent Navigation with Gemini',
+  manifest: '/manifest.json',
+};
+
+export const viewport = {
+  themeColor: '#4f46e5',
 };
 
 export default function RootLayout({

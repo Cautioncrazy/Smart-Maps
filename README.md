@@ -8,15 +8,17 @@
 * **Smart Routing:** Fetches routes via **OpenRouteService (ORS)**.
 * **AI Analysis:** Uses **Google Gemini** to analyze routes and recommend the best one.
 * **Modern UI:** Tailwind CSS with Light, Dark, and OLED Dark modes.
+* **PWA Support:** Installable on Android/iOS as a Progressive Web App.
 
 ## 🛠️ Tech Stack
 
-* **Framework:** Next.js 14+ (App Router)
+* **Framework:** Next.js 16+ (App Router)
 * **Styling:** Tailwind CSS + `next-themes`
 * **Maps:** `react-leaflet`, `leaflet`
 * **Routing API:** OpenRouteService
 * **AI:** Google Gemini (Generative AI SDK)
 * **Geocoding:** Nominatim (OSM)
+* **PWA:** `next-pwa`
 
 ## 📦 Setup & Installation
 
@@ -39,8 +41,6 @@
     GEMINI_API_KEY=your_gemini_api_key_here
     ```
 
-    > **Note:** The project is configured to use the keys provided during setup.
-
 4.  **Run the development server:**
     ```bash
     npm run dev
@@ -55,6 +55,10 @@
 2.  Select your Driving Persona.
 3.  Click "Find Smart Route".
 4.  View the recommended route highlighted in green with AI reasoning.
+
+### PWA Installation
+- **Android (Chrome):** Open the menu (three dots) -> "Install App" or "Add to Home Screen".
+- **iOS (Safari):** Tap "Share" -> "Add to Home Screen".
 
 ## 📄 License
 
